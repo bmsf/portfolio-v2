@@ -10,7 +10,6 @@ import { Switch } from '@nextui-org/react';
 export function ThemeSwitcher() {
 	const [mounted, setMounted] = useState(false);
 	const { theme, setTheme } = useTheme();
-	const [isSelected, setIsSelected] = useState(true);
 
 	useEffect(() => {
 		setMounted(true);

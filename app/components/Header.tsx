@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai';
 
 import {
 	Navbar,
@@ -12,7 +12,6 @@ import {
 	NavbarMenuToggle,
 	Link,
 	Button,
-	Switch,
 } from '@nextui-org/react';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
@@ -20,9 +19,9 @@ export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
 	const menuItems = [
-		'Profile',
-		'Dashboard',
-		'Activity',
+		'Projects',
+		'Technologies',
+		'Contact',
 		'Analytics',
 		'System',
 		'Deployments',
@@ -37,28 +36,28 @@ export default function Header() {
 			<NavbarContent>
 				<NavbarMenuToggle
 					aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-					className='sm:block lg:hidden'
+					className='sm:block md:hidden'
 				/>
 				<NavbarBrand>
 					{/* <AcmeLogo /> */}
-					<p className='font-bold text-inherit'>ACME</p>
+					<p className='font-bold text-inherit'>BMSF</p>
 				</NavbarBrand>
 			</NavbarContent>
 
-			<NavbarContent className='hidden sm:flex gap-4' justify='center'>
+			<NavbarContent className='hidden md:flex gap-4' justify='center'>
 				<NavbarItem>
 					<Link color='foreground' href='#'>
-						Features
+						Projects
 					</Link>
 				</NavbarItem>
 				<NavbarItem isActive>
 					<Link href='#' aria-current='page'>
-						Customers
+						Technologies
 					</Link>
 				</NavbarItem>
 				<NavbarItem>
 					<Link color='foreground' href='#'>
-						Integrations
+						Contact
 					</Link>
 				</NavbarItem>
 			</NavbarContent>
@@ -66,9 +65,18 @@ export default function Header() {
 				<NavbarItem className='lg:flex'>
 					<ThemeSwitcher />
 				</NavbarItem>
+				{/* <NavbarItem>
+					<Link color='foreground' href='#'>
+						<AiOutlineGithub className='w-8 h-8' />
+					</Link>
+
+					<Link color='foreground' href='#'>
+						<AiOutlineLinkedin className='w-8 h-8' />
+					</Link>
+				</NavbarItem> */}
 				<NavbarItem>
 					<Button as={Link} color='primary' href='#' variant='shadow'>
-						Sign Up
+						Contact
 					</Button>
 				</NavbarItem>
 			</NavbarContent>
