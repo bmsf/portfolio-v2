@@ -2,7 +2,7 @@
 import { Button } from '@nextui-org/react';
 import Image from 'next/image';
 import Hero from './components/layout/Hero';
-import Projects from './components/layout/Projects';
+// import Projects from './components/layout/Projects';
 
 export default function Home() {
 	return (
