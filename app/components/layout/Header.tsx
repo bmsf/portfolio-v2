@@ -13,7 +13,9 @@ import {
 	Link,
 	Button,
 } from '@nextui-org/react';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import { ThemeSwitcher } from '../ThemeSwitcher';
+import Logo from '@/public/logo-color.png';
+import Image from 'next/image';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -39,8 +41,10 @@ export default function Header() {
 					className='sm:block md:hidden'
 				/>
 				<NavbarBrand>
-					{/* <AcmeLogo /> */}
-					<p className='font-bold text-inherit'>BMSF</p>
+					<div className='h-12 w-12 relative'>
+						<Image src={Logo} alt='logo' fill className='object-cover' />
+					</div>
+					{/* <p className='font-bold text-inherit'>BMSF</p> */}
 				</NavbarBrand>
 			</NavbarContent>
 
