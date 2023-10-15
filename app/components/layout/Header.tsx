@@ -26,7 +26,7 @@ export default function Header() {
 
 	const { theme, setTheme } = useTheme();
 
-	const menuItems = ['Projects', 'Technologies', 'Contact'];
+	const menuItems = ['Home', 'About', 'Projects', 'Technologies'];
 
 	return (
 		<Navbar onMenuOpenChange={setIsMenuOpen}>
@@ -81,15 +81,7 @@ export default function Header() {
 				<NavbarItem className='lg:flex'>
 					<ThemeSwitcher />
 				</NavbarItem>
-				{/* <NavbarItem>
-					<Link color='foreground' href='#'>
-						<AiOutlineGithub className='w-8 h-8' />
-					</Link>
 
-					<Link color='foreground' href='#'>
-						<AiOutlineLinkedin className='w-8 h-8' />
-					</Link>
-				</NavbarItem> */}
 				<NavbarItem>
 					<Button as={Link} color='primary' href='#' variant='shadow'>
 						Contact
@@ -100,15 +92,16 @@ export default function Header() {
 				{menuItems.map((item, index) => (
 					<NavbarMenuItem key={`${item}-${index}`}>
 						<Link
-							color={
-								index === 2
-									? 'primary'
-									: index === menuItems.length - 1
-									? 'danger'
-									: 'foreground'
-							}
+							// color={
+							// 	index === 2
+							// 		? 'primary'
+							// 		: index === menuItems.length - 1
+							// 		? 'danger'
+							// 		: 'foreground'
+							// }
+							color='foreground'
 							className='w-full'
-							href='#'
+							href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
 							size='lg'
 						>
 							{item}

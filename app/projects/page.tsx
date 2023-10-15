@@ -19,7 +19,7 @@ export default function ProjectsPage() {
 				<div className='my-20'>
 					<h1 className='text-3xl'>Projects</h1>
 					<p className='text-sm text-gray-400'>
-						Here are some of the things I've created.
+						Here are some of the things I&apos;ve created.
 					</p>
 				</div>
 				<div className='flex flex-col items-center relative'>
@@ -38,14 +38,14 @@ export default function ProjectsPage() {
 									<div>
 										<div className='p-12'>
 											<div className='flex flex-col align-center justify-center'>
-												<h3
-													className='text-3xl font-bold text-center lg:text-left'
+												<h2
+													className='text-3xl font-bold'
 													data-aos='fade-up'
 													data-aos-duration='1000'
 													data-aos-delay='500'
 												>
 													{project.name}
-												</h3>
+												</h2>
 												<p
 													data-aos='fade-up'
 													data-aos-duration='1000'
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
 															data-aos='fade-right'
 															data-aos-duration='1000'
 															data-aos-delay='500'
-															// key={project.tech}
+															key={tech}
 															className='tech p-3 my-2 mr-3'
 															style={{ backgroundColor: project.bgTech }}
 														>
