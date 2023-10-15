@@ -34,7 +34,6 @@ export default function ProjectsPage() {
 										backgroundColor: project.color,
 										color: project.font,
 									}}
-									onClick={() => window.open(`${project.link}`, '_blank')}
 								>
 									<div>
 										<div className='p-12'>
@@ -77,7 +76,7 @@ export default function ProjectsPage() {
 												<Link
 													className={`text-${project.font}`}
 													isExternal
-													href='https://github.com/nextui-org/nextui'
+													href={project.github}
 													showAnchorIcon
 												>
 													GitHub
@@ -85,7 +84,7 @@ export default function ProjectsPage() {
 												<Link
 													className={`text-${project.font}`}
 													isExternal
-													href='https://github.com/nextui-org/nextui'
+													href={project.link}
 													showAnchorIcon
 												>
 													Live Demo

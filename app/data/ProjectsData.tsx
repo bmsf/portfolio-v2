@@ -30,8 +30,8 @@ const projectList: Project[] = [
 		img: holidaze,
 		color: '#181818',
 		font: '#f1f1f1',
-		github: 'https://github.com/bmsf/blomsterwerket',
-		link: 'https://blomsterwerket.vercel.app/',
+		github: 'https://github.com/bmsf/FED2-Exam',
+		link: 'https://fed-2-exam.vercel.app/',
 	},
 	{
 		id: 2,
@@ -42,8 +42,8 @@ const projectList: Project[] = [
 		img: bidcircle,
 		color: '#D3D6E0',
 		font: '#28282B',
-		github: 'https://github.com/bmsf/blomsterwerket',
-		link: 'https://blomsterwerket.vercel.app/',
+		github: 'https://github.com/bmsf/semester-project-2',
+		link: 'https://starlit-lamington-b689b0.netlify.app/',
 	},
 	{
 		id: 3,
@@ -66,8 +66,8 @@ const projectList: Project[] = [
 		img: ecommerce,
 		color: '#EAEAEA',
 		font: '#28282B',
-		github: 'https://github.com/bmsf/blomsterwerket',
-		link: 'https://blomsterwerket.vercel.app/',
+		github: 'https://github.com/bmsf/dp-ca',
+		link: 'https://dainty-raindrop-057b82.netlify.app/',
 	},
 
 	{
