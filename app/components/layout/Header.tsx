@@ -1,6 +1,12 @@
 'use client';
 import React from 'react';
-import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai';
+import {
+	AiOutlineGithub,
+	AiOutlineInstagram,
+	AiOutlineLinkedin,
+	AiOutlineMail,
+} from 'react-icons/ai';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 import {
 	Navbar,
@@ -95,41 +101,81 @@ export default function Header() {
 						Contact
 					</Button>
 					<Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-						<ModalContent>
+						<ModalContent className='p-8'>
 							{(onClose) => (
 								<>
-									<ModalHeader className='flex flex-col gap-1'>
-										Modal Title
+									<ModalHeader className='flex flex-col gap-1 text-xl'>
+										Connect
 									</ModalHeader>
 									<ModalBody>
 										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-											Nullam pulvinar risus non risus hendrerit venenatis.
-											Pellentesque sit amet hendrerit risus, sed porttitor quam.
+											Have a question or just want to chat? Feel free to email
+											me. You can also hit me up on socials.
 										</p>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-											Nullam pulvinar risus non risus hendrerit venenatis.
-											Pellentesque sit amet hendrerit risus, sed porttitor quam.
-										</p>
-										<p>
-											Magna exercitation reprehenderit magna aute tempor
-											cupidatat consequat elit dolor adipisicing. Mollit dolor
-											eiusmod sunt ex incididunt cillum quis. Velit duis sit
-											officia eiusmod Lorem aliqua enim laboris do dolor
-											eiusmod. Et mollit incididunt nisi consectetur esse
-											laborum eiusmod pariatur proident Lorem eiusmod et. Culpa
-											deserunt nostrud ad veniam.
-										</p>
+
+										<div className='flex gap-4 items-center my-8 flex-wrap'>
+											<Button
+												color='warning'
+												variant='faded'
+												aria-label='Github'
+												size='lg'
+												endContent={<AiOutlineGithub />}
+												className='w-40'
+											>
+												<Link isExternal href='https://github.com/bmsf'>
+													GitHub
+												</Link>
+											</Button>
+											<Button
+												color='warning'
+												variant='faded'
+												aria-label='Instagram'
+												size='lg'
+												endContent={<AiOutlineInstagram />}
+												className='w-40'
+											>
+												<Link
+													isExternal
+													href='https://www.instagram.com/bmfromreide/'
+												>
+													Instagram
+												</Link>
+											</Button>
+											<Button
+												color='warning'
+												variant='faded'
+												aria-label='LinkedIn'
+												size='lg'
+												endContent={<AiOutlineLinkedin />}
+												className='w-40'
+											>
+												<Link
+													isExternal
+													href='https://www.linkedin.com/in/bj%C3%B8rn-magnus-fromreide-18b1a1170/'
+												>
+													LinkedIn
+												</Link>
+											</Button>
+											<Button
+												color='warning'
+												variant='faded'
+												aria-label='LinkedIn'
+												size='lg'
+												endContent={<AiOutlineMail />}
+												className='w-40'
+											>
+												<Link href='mailto:fromreide94@gmail.com'>Email</Link>
+											</Button>
+										</div>
 									</ModalBody>
-									<ModalFooter>
+									{/* <ModalFooter>
 										<Button color='danger' variant='light' onPress={onClose}>
 											Close
 										</Button>
 										<Button color='primary' onPress={onClose}>
 											Action
 										</Button>
-									</ModalFooter>
+									</ModalFooter> */}
 								</>
 							)}
 						</ModalContent>
