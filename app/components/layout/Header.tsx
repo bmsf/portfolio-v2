@@ -14,24 +14,19 @@ import {
 	Button,
 } from '@nextui-org/react';
 import { ThemeSwitcher } from '../ThemeSwitcher';
-import Logo from '@/public/logo-color.png';
+import { useTheme } from 'next-themes';
+import { usePathname } from 'next/navigation';
+import Logo from '@/public/logo-no-background.png';
+import LogoLight from '@/public/logo-no-background-light.png';
 import Image from 'next/image';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+	const pathname = usePathname();
 
-	const menuItems = [
-		'Projects',
-		'Technologies',
-		'Contact',
-		'Analytics',
-		'System',
-		'Deployments',
-		'My Settings',
-		'Team Settings',
-		'Help & Feedback',
-		'Log Out',
-	];
+	const { theme, setTheme } = useTheme();
+
+	const menuItems = ['Projects', 'Technologies', 'Contact'];
 
 	return (
 		<Navbar onMenuOpenChange={setIsMenuOpen}>
@@ -41,30 +36,47 @@ export default function Header() {
 					className='sm:block md:hidden'
 				/>
 				<NavbarBrand>
-					<div className='h-12 w-12 relative'>
-						<Image src={Logo} alt='logo' fill className='object-cover' />
-					</div>
-					{/* <p className='font-bold text-inherit'>BMSF</p> */}
+					<Link className='h-12 w-12 relative' href='/'>
+						<Image
+							src={theme === 'light' ? LogoLight : Logo}
+							alt='logo'
+							fill
+							className='object-contain'
+						/>
+					</Link>
 				</NavbarBrand>
 			</NavbarContent>
 
 			<NavbarContent className='hidden md:flex gap-4' justify='center'>
 				<NavbarItem>
-					<Link color='foreground' href='#'>
-						Projects
-					</Link>
-				</NavbarItem>
-				<NavbarItem isActive>
-					<Link href='#' aria-current='page'>
-						Technologies
+					<Link
+						href='/about'
+						color={pathname === '/about' ? 'primary' : 'foreground'}
+						aria-current={pathname === '/projects' ? 'page' : undefined}
+					>
+						About
 					</Link>
 				</NavbarItem>
 				<NavbarItem>
-					<Link color='foreground' href='#'>
-						Contact
+					<Link
+						href='/projects'
+						color={pathname === '/projects' ? 'primary' : 'foreground'}
+						aria-current={pathname === '/projects' ? 'page' : undefined}
+					>
+						Projects
+					</Link>
+				</NavbarItem>
+				<NavbarItem isActive={pathname === '/technologies'}>
+					<Link
+						href='/technologies'
+						color={pathname === '/technologies' ? 'primary' : 'foreground'}
+						aria-current={pathname === '/technologies' ? 'page' : undefined}
+					>
+						Technologies
 					</Link>
 				</NavbarItem>
 			</NavbarContent>
+
 			<NavbarContent justify='end'>
 				<NavbarItem className='lg:flex'>
 					<ThemeSwitcher />
