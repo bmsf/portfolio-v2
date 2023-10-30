@@ -28,7 +28,7 @@ const projectList: Project[] = [
 		technologies: ['React', 'Tailwind', 'Next.js 13', 'shadcn'],
 		bgTech: 'hsla(0, 0%, 100%, 0.1)',
 		img: holidaze,
-		color: '#181818',
+		color: '#191919',
 		font: '#f1f1f1',
 		github: 'https://github.com/bmsf/FED2-Exam',
 		link: 'https://fed-2-exam.vercel.app/',
